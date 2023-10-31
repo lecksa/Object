@@ -36,8 +36,6 @@ let house = {
     }
 }
 
-Object.freeze(house)
-
 let apartment = {
     room: ['living room', 'kitchen', 'toilet', 'bedroom'],
     area: '50 m^2',
@@ -47,19 +45,13 @@ let apartment = {
     }
 }
 
-Object.freeze(apartment)
-
-let new_object = {}
-
-Object.assign({}, house, {apartment})
+let new_object = Object.assign({}, house, {apartment})
 
 let key = Object.keys(new_object)
 
 let value = Object.values(new_object)
 
-let old_object = {}
-
-Object.assign({}, key, {value})
+let old_object = key.concat(value)
 
 console.log(new_object);
 
